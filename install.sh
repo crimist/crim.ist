@@ -1,0 +1,1 @@
+sudo ln -v index.html /var/www/html/
