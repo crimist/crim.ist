@@ -1,6 +1,6 @@
-sudo unlink index.html
-sudo unlink robots.txt
-sudo unlink crimist-transparent.png
+sudo unlink /var/www/html/index.html
+sudo unlink /var/www/html/robots.txt
+sudo unlink /var/www/html/crimist-transparent.png
 
 sudo ln -v index.html /var/www/html/
 sudo ln -v robots.txt /var/www/html/
