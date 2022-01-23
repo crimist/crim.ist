@@ -110,7 +110,7 @@
     window.onload = function() {
         var logo = document.getElementById("logo");
 
-        if (window.innerHeight - logo.offsetTop > -50) {
+        if (window.innerHeight - logo.offsetTop > 0) {
             var scrollPrompt = document.getElementById("scroll-prompt");
             scrollPrompt.style.opacity = 0;
             scrollPromptDone = true;
@@ -124,7 +124,7 @@
         }
 
         // scale opacity with fadeDistance
-        const fadeDistance = 300;
+        const fadeDistance = 200;
         var scrollPrompt = document.getElementById("scroll-prompt");
 
         if (window.scrollY > fadeDistance) {
