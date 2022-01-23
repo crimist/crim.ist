@@ -7,6 +7,8 @@
 <!-- Banner font: univers -->
 <!-- Heading font: slant -->
 
+<!-- TODO: Fix mobile. Looks fine scaled in chrome devtools but chrome mobile doesn't work... -->
+
 <head>
     <title>Crimist - NFO</title>
     <meta charset="UTF-8">
@@ -110,7 +112,7 @@
     window.onload = function() {
         var logo = document.getElementById("logo");
 
-        if (window.innerHeight - logo.offsetTop > 0) {
+        if (window.innerHeight - logo.offsetTop > 5) {
             var scrollPrompt = document.getElementById("scroll-prompt");
             scrollPrompt.style.opacity = 0;
             scrollPromptDone = true;
