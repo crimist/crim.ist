@@ -7,8 +7,6 @@
 <!-- Banner font: univers -->
 <!-- Heading font: slant -->
 
-<!-- TODO: Fix mobile. Looks fine scaled in chrome devtools but chrome mobile doesn't work... -->
-
 <head>
     <title>Crimist - NFO</title>
     <meta charset="UTF-8">
@@ -16,12 +14,19 @@
 </head>
 
 <style>
+    @font-face {
+        font-family: "Consolas";
+        src: url("consola.ttf") format("truetype");
+    }
+
     /* white on black and hide scrollbars */
     body {
         background-color: black;
         overflow-y: scroll;
         scrollbar-width: none;
         -ms-overflow-style: none;
+
+        font-family: Consolas;
     }
 
     body::-webkit-scrollbar {
@@ -37,10 +42,22 @@
 
     /* monospace and include whitespace for ascii art */
     .ascii {
-        font-family: consolas, monospace;
-        font-size: min(1.7vw, 1.3vh); /* Scale with viewport up to max */
+        /* font-size: min(1vmax, 2vh); */
         white-space: pre;
         color: white;
+    }
+
+    /* scale by width on mobile */
+    @media (min-aspect-ratio: 3/5) {
+        .ascii {
+            font-size: min(1vmax, 2vh);
+        }
+    }
+
+    @media (max-aspect-ratio: 3/5) {
+        .ascii {
+            font-size: 1.7vw;
+        }
     }
 
     /* subtle hrefs */
@@ -73,15 +90,14 @@
     /* real footer */
     #footer {
         color: white;
-        font-family: consolas, monospace;
-        font-size: min(1.6vw, 1.2vh);
+        font-size: min(0.9vmax, 1.5vh);
     }
 
     /* rainbow animation for OLED (https://stackoverflow.com/a/54702294/6389542) */
     .rainbow {
         text-align: center;
         text-decoration: underline;
-        font-size: min(2.5vw, 20px);
+        font-size: min(1.3vmax, 2vh);
         font-weight: bold;
         letter-spacing: 5px;
     }
