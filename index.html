@@ -19,7 +19,7 @@
         src: url("resources/consola.ttf") format("truetype");
     }
 
-    /* white on black and hide scrollbars */
+    /* black bg and hide scrollbars */
     body {
         background-color: black;
         overflow-y: scroll;
@@ -40,27 +40,32 @@
         justify-content: center; 
     }
 
-    /* monospace and include whitespace for ascii art */
+    /* color white and include whitespace for ascii art */
     .ascii {
-        /* font-size: min(1vmax, 2vh); */
         white-space: pre;
-        color: white;
+        color: white; /* TODO: Consider choosing something more engaging */
     }
 
-    /* scale by width on mobile */
-    @media (min-aspect-ratio: 3/5) {
+    /* text scaling, don't try to understand */
+    @media (min-aspect-ratio: 4/1) {
         .ascii {
-            font-size: min(1vmax, 2vh);
+            font-size: 4vmin;
         }
     }
 
-    @media (max-aspect-ratio: 3/5) {
+    @media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 4/1){
+        .ascii {
+            font-size: min(2.5vmin, 1.7vw);
+        }
+    }
+
+    @media (max-aspect-ratio: 1/1) {
         .ascii {
             font-size: 1.7vw;
         }
     }
 
-    /* subtle hrefs */
+    /* light blue hrefs, underline on hover */
     a {
         color: #00E3E3;
         text-decoration: none;
@@ -70,7 +75,7 @@
         text-decoration: underline;
     }
 
-    /* scroll prompt bottom right with animation */
+    /* scroll prompt in bottom right with bounce animation */
     #scroll-prompt {
         position: fixed;
         bottom: 0vmax;
@@ -87,13 +92,13 @@
         }
     }
 
-    /* real footer */
+    /* footer */
     #footer {
         color: white;
         font-size: min(0.9vmax, 1.5vh);
     }
 
-    /* rainbow animation for OLED (https://stackoverflow.com/a/54702294/6389542) */
+    /* rainbow animation for footer "OLED" (https://stackoverflow.com/a/54702294/6389542) */
     .rainbow {
         text-align: center;
         text-decoration: underline;
